@@ -91,7 +91,7 @@ de sub sistemas de sua preferência
 Entre no diretório do projeto
 
 ```bash
-  cd commerce-suit
+  cd api-enderecos
 ```
 
 Instale as dependências

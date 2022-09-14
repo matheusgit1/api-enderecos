@@ -1,0 +1,512 @@
+{
+	"info": {
+		"_postman_id": "ad4dd9f7-7b1e-47c6-b193-a7ddaa6cd6bc",
+		"name": "endereços (partially ok)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17845763"
+	},
+	"item": [
+		{
+			"name": "create (ok)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{TOKEN}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"street\":\"Rua Nilo de Sá\",\r\n    \"district\": \"Itacibá\",\r\n    \"zipCode\": \"29150430\",\r\n    \"number\": 1,\r\n    \"block\": \"01\",\r\n    \"state\": \"Espirito santo\",\r\n    \"uf\": \"ES\",\r\n    \"reference\": \"Proximo ao fim do mundo\",\r\n    \"city\": \"Cariacica\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL_API_ENDERECOS}}/adress/create",
+					"host": [
+						"{{URL_API_ENDERECOS}}"
+					],
+					"path": [
+						"adress",
+						"create"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "create",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBlcmVpcmEyLm1hdGhldXNhbHZlc0BnbWFpbC5jb20iLCJ1c2VybmFtZSI6Im1hdGhldXMiLCJpZCI6IjdkMTVhNmZiLTY5ZGYtNGFmOC1hYzI5LTViNzVhYjYzNGQ4OCIsImlhdCI6MTY2MDE1NjE5NCwiZXhwIjoxNjYwNzYwOTk0fQ.lkdUkwBsU91HPncB82vWEbg_Ro85KXjsJq9O-YJKtms",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"street\":\"Rua Nilo de Sá\",\r\n    \"district\": \"Itacibá\",\r\n    \"zipCode\": \"29150430\",\r\n    \"number\": 1,\r\n    \"block\": \"01\",\r\n    \"state\": \"Espirito santo\",\r\n    \"uf\": \"ES\",\r\n    \"reference\": \"Proximo ao fim do mundo\",\r\n    \"city\": \"Cariacica\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3002/adress/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"adress",
+								"create"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "357"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"165-wYIRoIdRb4mE1N9+z2tUTiKqIDs\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 10 Aug 2022 19:53:05 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"city\": \"Cariacica\",\n    \"userId\": \"7d15a6fb-69df-4af8-ac29-5b75ab634d88\",\n    \"street\": \"Rua Nilo de Sá\",\n    \"district\": \"Itacibá\",\n    \"zipCode\": \"29150430\",\n    \"number\": 1,\n    \"block\": \"01\",\n    \"state\": \"Espirito santo\",\n    \"uf\": \"ES\",\n    \"reference\": \"Proximo ao fim do mundo\",\n    \"id\": \"28fdfb6f-d354-4618-b630-20059717518c\",\n    \"createdAt\": \"2022-08-10T19:53:05.821Z\",\n    \"updatedAt\": \"2022-08-10T19:53:05.821Z\"\n}"
+				}
+			]
+		},
+		{
+			"name": "list adress (ok)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{URL_API_ENDERECOS}}/adress/list",
+					"host": [
+						"{{URL_API_ENDERECOS}}"
+					],
+					"path": [
+						"adress",
+						"list"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "list adress",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBlcmVpcmEyLm1hdGhldXNhbHZlc0BnbWFpbC5jb20iLCJ1c2VybmFtZSI6Im1hdGhldXMiLCJpZCI6IjdkMTVhNmZiLTY5ZGYtNGFmOC1hYzI5LTViNzVhYjYzNGQ4OCIsImlhdCI6MTY2MDE1NjE5NCwiZXhwIjoxNjYwNzYwOTk0fQ.lkdUkwBsU91HPncB82vWEbg_Ro85KXjsJq9O-YJKtms",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3002/adress/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"adress",
+								"list"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "2486"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"9b6-Yrwp6figeHrt5e4OP1H0RIe/BH8\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 10 Aug 2022 19:53:14 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"3dc81c46-a7bf-450b-9f90-4ae34739d00a\",\n        \"city\": \"Cariacica\",\n        \"userId\": \"7d15a6fb-69df-4af8-ac29-5b75ab634d88\",\n        \"street\": \"Rua Nilo de Sá\",\n        \"district\": \"Itacibá\",\n        \"zipCode\": \"29150430\",\n        \"number\": 1,\n        \"block\": 1,\n        \"state\": \"Espirito santo\",\n        \"uf\": \"ES\",\n        \"reference\": \"Proximo ao fim do mundo\",\n        \"createdAt\": \"2022-08-10T18:40:24.786Z\",\n        \"updatedAt\": \"2022-08-10T18:40:24.786Z\"\n    },\n    {\n        \"id\": \"df60fc7e-8377-4497-80c3-df4c6eead805\",\n        \"city\": \"Cariacica\",\n        \"userId\": \"7d15a6fb-69df-4af8-ac29-5b75ab634d88\",\n        \"street\": \"Rua Nilo de Sá\",\n        \"district\": \"Itacibá\",\n        \"zipCode\": \"29150430\",\n        \"number\": 1,\n        \"block\": 1,\n        \"state\": \"Espirito santo\",\n        \"uf\": \"ES\",\n        \"reference\": \"Proximo ao fim do mundo\",\n        \"createdAt\": \"2022-08-10T18:41:33.522Z\",\n        \"updatedAt\": \"2022-08-10T18:41:33.522Z\"\n    },\n    {\n        \"id\": \"9976b510-af9f-4ff6-925e-02a297a1162a\",\n        \"city\": \"Cariacica\",\n        \"userId\": \"7d15a6fb-69df-4af8-ac29-5b75ab634d88\",\n        \"street\": \"Rua Nilo de Sá\",\n        \"district\": \"Itacibá\",\n        \"zipCode\": \"29150430\",\n        \"number\": 1,\n        \"block\": 1,\n        \"state\": \"Espirito santo\",\n        \"uf\": \"ES\",\n        \"reference\": \"Proximo ao fim do mundo\",\n        \"createdAt\": \"2022-08-10T18:44:15.797Z\",\n        \"updatedAt\": \"2022-08-10T18:44:15.797Z\"\n    },\n    {\n        \"id\": \"65747124-80a7-45e7-a305-60892519409b\",\n        \"city\": \"Cariacica\",\n        \"userId\": \"7d15a6fb-69df-4af8-ac29-5b75ab634d88\",\n        \"street\": \"Rua Nilo de Sá\",\n        \"district\": \"Itacibá\",\n        \"zipCode\": \"29150430\",\n        \"number\": 1,\n        \"block\": 1,\n        \"state\": \"Espirito santo\",\n        \"uf\": \"ES\",\n        \"reference\": \"Proximo ao fim do mundo\",\n        \"createdAt\": \"2022-08-10T18:44:23.882Z\",\n        \"updatedAt\": \"2022-08-10T18:44:23.882Z\"\n    },\n    {\n        \"id\": \"528b7b01-a73c-4e52-ba59-a5948cb56ca0\",\n        \"city\": \"Cariacica\",\n        \"userId\": \"7d15a6fb-69df-4af8-ac29-5b75ab634d88\",\n        \"street\": \"Rua Nilo de Sá\",\n        \"district\": \"Itacibá\",\n        \"zipCode\": \"29150430\",\n        \"number\": 1,\n        \"block\": 1,\n        \"state\": \"Espirito santo\",\n        \"uf\": \"ES\",\n        \"reference\": \"Proximo ao fim do mundo\",\n        \"createdAt\": \"2022-08-10T18:45:13.020Z\",\n        \"updatedAt\": \"2022-08-10T18:45:13.020Z\"\n    },\n    {\n        \"id\": \"409535e8-aaa2-4056-9174-af3eefe206b1\",\n        \"city\": \"Cariacica\",\n        \"userId\": \"7d15a6fb-69df-4af8-ac29-5b75ab634d88\",\n        \"street\": \"Rua Nilo de Sá\",\n        \"district\": \"Itacibá\",\n        \"zipCode\": \"29150430\",\n        \"number\": 1,\n        \"block\": 1,\n        \"state\": \"Espirito santo\",\n        \"uf\": \"RJ\",\n        \"reference\": \"Proximo ao fim do mundo\",\n        \"createdAt\": \"2022-08-10T18:41:16.450Z\",\n        \"updatedAt\": \"2022-08-10T19:52:57.366Z\"\n    },\n    {\n        \"id\": \"28fdfb6f-d354-4618-b630-20059717518c\",\n        \"city\": \"Cariacica\",\n        \"userId\": \"7d15a6fb-69df-4af8-ac29-5b75ab634d88\",\n        \"street\": \"Rua Nilo de Sá\",\n        \"district\": \"Itacibá\",\n        \"zipCode\": \"29150430\",\n        \"number\": 1,\n        \"block\": 1,\n        \"state\": \"Espirito santo\",\n        \"uf\": \"ES\",\n        \"reference\": \"Proximo ao fim do mundo\",\n        \"createdAt\": \"2022-08-10T19:53:05.821Z\",\n        \"updatedAt\": \"2022-08-10T19:53:05.821Z\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "update (ok)",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{TOKEN}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"city\": \"Cariacica\",\r\n    \"street\": \"Rua Nilo de Sá\",\r\n    \"district\": \"Itacibá\",\r\n    \"zipCode\": \"29150430\",\r\n    \"number\": 1,\r\n    \"block\": \"01\",\r\n    \"state\": \"Espirito santo\",\r\n    \"uf\": \"RJ\",\r\n    \"reference\": \"Proximo ao fim do mundo\",\r\n    \"adressId\": \"409535e8-aaa2-4056-9174-af3eefe206b1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL_API_ENDERECOS}}/adress/edit",
+					"host": [
+						"{{URL_API_ENDERECOS}}"
+					],
+					"path": [
+						"adress",
+						"edit"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "update",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBlcmVpcmEyLm1hdGhldXNhbHZlc0BnbWFpbC5jb20iLCJ1c2VybmFtZSI6Im1hdGhldXMiLCJpZCI6IjdkMTVhNmZiLTY5ZGYtNGFmOC1hYzI5LTViNzVhYjYzNGQ4OCIsImlhdCI6MTY2MDE1NjE5NCwiZXhwIjoxNjYwNzYwOTk0fQ.lkdUkwBsU91HPncB82vWEbg_Ro85KXjsJq9O-YJKtms",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"city\": \"Cariacica\",\r\n    \"street\": \"Rua Nilo de Sá\",\r\n    \"district\": \"Itacibá\",\r\n    \"zipCode\": \"29150430\",\r\n    \"number\": 1,\r\n    \"block\": \"01\",\r\n    \"state\": \"Espirito santo\",\r\n    \"uf\": \"RJ\",\r\n    \"reference\": \"Proximo ao fim do mundo\",\r\n    \"adressId\": \"409535e8-aaa2-4056-9174-af3eefe206b1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3002/adress/edit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"adress",
+								"edit"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "354"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"162-oMnsJlZI1H3PDcKMXnIRfSLR+wo\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 10 Aug 2022 19:52:57 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"409535e8-aaa2-4056-9174-af3eefe206b1\",\n    \"city\": \"Cariacica\",\n    \"userId\": \"7d15a6fb-69df-4af8-ac29-5b75ab634d88\",\n    \"street\": \"Rua Nilo de Sá\",\n    \"district\": \"Itacibá\",\n    \"zipCode\": \"29150430\",\n    \"number\": 1,\n    \"block\": 1,\n    \"state\": \"Espirito santo\",\n    \"uf\": \"RJ\",\n    \"reference\": \"Proximo ao fim do mundo\",\n    \"createdAt\": \"2022-08-10T18:41:16.450Z\",\n    \"updatedAt\": \"2022-08-10T19:52:57.366Z\"\n}"
+				}
+			]
+		},
+		{
+			"name": "delete adress (ok)",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBlcmVpcmEyLm1hdGhldXNhbHZlc0BnbWFpbC5jb20iLCJ1c2VybmFtZSI6Im1hdGhldXMiLCJpZCI6IjdkMTVhNmZiLTY5ZGYtNGFmOC1hYzI5LTViNzVhYjYzNGQ4OCIsImlhdCI6MTY2MDE1NjE5NCwiZXhwIjoxNjYwNzYwOTk0fQ.lkdUkwBsU91HPncB82vWEbg_Ro85KXjsJq9O-YJKtms",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"adressId\" : \"91f37ece-dca3-45ad-9634-f137b1673262\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL_API_ENDERECOS}}/adress/delete",
+					"host": [
+						"{{URL_API_ENDERECOS}}"
+					],
+					"path": [
+						"adress",
+						"delete"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "delete adress",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBlcmVpcmEyLm1hdGhldXNhbHZlc0BnbWFpbC5jb20iLCJ1c2VybmFtZSI6Im1hdGhldXMiLCJpZCI6IjdkMTVhNmZiLTY5ZGYtNGFmOC1hYzI5LTViNzVhYjYzNGQ4OCIsImlhdCI6MTY2MDE1NjE5NCwiZXhwIjoxNjYwNzYwOTk0fQ.lkdUkwBsU91HPncB82vWEbg_Ro85KXjsJq9O-YJKtms",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"adressId\" : \"91f37ece-dca3-45ad-9634-f137b1673262\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3002/adress/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"adress",
+								"delete"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 10 Aug 2022 19:52:34 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "find-one",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n{\r\n    \"adressId\" : \"409535e8-aaa2-4056-9174-af3eefe206b1\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL_API_ENDERECOS}}/adress/list-one",
+					"host": [
+						"{{URL_API_ENDERECOS}}"
+					],
+					"path": [
+						"adress",
+						"list-one"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "find-one",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n    \"adressId\" : \"409535e8-aaa2-4056-9174-af3eefe206b1\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3002/adress/list-one",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"adress",
+								"list-one"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "354"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"162-/sT2hyJCaGwbfEYhh2f/0n6Z4Pw\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 10 Aug 2022 19:52:15 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"409535e8-aaa2-4056-9174-af3eefe206b1\",\n    \"city\": \"Cariacica\",\n    \"userId\": \"7d15a6fb-69df-4af8-ac29-5b75ab634d88\",\n    \"street\": \"Rua Nilo de Sá\",\n    \"district\": \"Itacibá\",\n    \"zipCode\": \"29150430\",\n    \"number\": 1,\n    \"block\": 1,\n    \"state\": \"Espirito santo\",\n    \"uf\": \"ES\",\n    \"reference\": \"Proximo ao fim do mundo\",\n    \"createdAt\": \"2022-08-10T18:41:16.450Z\",\n    \"updatedAt\": \"2022-08-10T18:41:16.450Z\"\n}"
+				}
+			]
+		}
+	]
+}

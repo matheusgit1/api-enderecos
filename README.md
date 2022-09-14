@@ -120,3 +120,155 @@ ou
 ## Condições iniciais
 
 #### para o funcionamento adequado é necessario que suas variaveis de ambientes estejam corretas
+
+# Documentação da api
+
+a collection postman dessa api está idisponivel dentro desse repositório: em: https://github.com/matheusgit1/api-enderecos/blob/main/adress.api.docs
+
+### variaveis
+
+#### URL_API_ENDERECOS: variavel onde a api estará rodando localmente
+
+#### TOKEN: token de auenticação (você só consegue ele na rota de login da api de dutenticação)
+
+### Retornos padronizados
+
+status 400 - Bad request
+
+status 404 - Recurso não encontrado
+
+status 500 - erro interno
+
+stauts 200 - ok
+
+## Rotas
+
+
+#### Criar um novo recurso no contexto de endereços
+
+```http
+  POST /adress/create
+```
+
+| Headers   | Tipo       | Descrição                           |
+| :---------- | :--------- | :---------------------------------- |
+| `token` | `string` | **Obrigatório**. token de autenticação - {Bearer token} |
+
+| Body   | Tipo       | Descrição                           |
+| :---------- | :--------- | :---------------------------------- |
+| `city` | `string` | **Obrigatório**. nome da cidade|
+| `reference` | `string` | **Obrigatório**. referencia de encontro|
+| `district` | `string` | **Obrigatório**.  bairro|
+| `zipCode` | `string` | **Obrigatório**.  cep-|
+| `number` | `string` | **Obrigatório**.  número |
+| `block` | `string` | **Obrigatório**.  quadra |
+| `state` | `string` | **Obrigatório**.  estado |
+| `state` | `string` | **Obrigatório**.  unidade federativa no formato de siglas. ex: ES, DF, MG... |
+
+#### Retorna status 201 caso tudo esteja no formato esperado
+
+
+
+#### Listagem de todos os recursos criados pelo usuario
+
+```http
+  GET /adress/list
+```
+| Headers   | Tipo       | Descrição                           |
+| :---------- | :--------- | :---------------------------------- |
+| `token` | `string` | **Obrigatório**. token de autenticação - {Bearer token} |
+
+#### Retorna staus 200 e um array de objetos com alistagem de todos os endereços do usuarios n oseguinte formato:
+
+```JSON
+[
+    {
+        "id": "3dc81c46-a7bf-450b-9f90-4ae34739d00a",
+        "city": "cidade",
+        "userId": "7d15a6fb-69df-4af8-ac29-5b75ab634d88",
+        "street": "nome da rua",
+        "district": "nome do bairro",
+        "zipCode": "cep",
+        "number": numero,
+        "block": quadra,
+        "state": "estado",
+        "uf": "uf",
+        "reference": "uma referencia qualquer aqui",
+        "createdAt": "2022-08-10T18:40:24.786Z",
+        "updatedAt": "2022-08-10T18:40:24.786Z"
+    },
+    ...
+]
+```
+
+#### Atualiza um recurso
+
+```http
+  PUT /adress/edit
+```
+| Headers   | Tipo       | Descrição                           |
+| :---------- | :--------- | :---------------------------------- |
+| `token` | `string` | **Obrigatório**. token de autenticação - {Bearer token} |
+
+| Body   | Tipo       | Descrição                           |
+| :---------- | :--------- | :---------------------------------- |
+| `city` | `string` | **Obrigatório**. nome da cidade|
+| `reference` | `string` | **Obrigatório**. referencia de encontro|
+| `district` | `string` | **Obrigatório**.  bairro|
+| `zipCode` | `string` | **Obrigatório**.  cep|
+| `number` | `string` | **Obrigatório**.  número |
+| `block` | `string` | **Obrigatório**.  quadra |
+| `state` | `string` | **Obrigatório**.  estado |
+| `state` | `string` | **Obrigatório**.  unidade federativa no formato de siglas. ex: ES, DF, MG... |
+| `adressId` | `string` | **Obrigatório**.  id do encdereço que já foi cadastrado mas quer ser atualizado |
+
+
+#### Deleta um recurso
+
+```http
+  DELETE /adress/delete
+```
+
+| Headers   | Tipo       | Descrição                           |
+| :---------- | :--------- | :---------------------------------- |
+| `token` | `string` | **Obrigatório**. token de autenticação - {Bearer token} |
+
+| Body   | Tipo       | Descrição                           |
+| :---------- | :--------- | :---------------------------------- |
+| `adressId` | `string` | **Obrigatório**.  id do endereço que já foi cadastrado mas quer ser deletado |
+
+
+#### Recupera um recurso especifico
+
+
+```http
+  GET /adress/list-one
+```
+
+| Headers   | Tipo       | Descrição                           |
+| :---------- | :--------- | :---------------------------------- |
+| `token` | `string` | **Obrigatório**. token de autenticação - {Bearer token} |
+
+| Body   | Tipo       | Descrição                           |
+| :---------- | :--------- | :---------------------------------- |
+| `adressId` | `string` | **Obrigatório**.  id do endereço que já foi cadastrado |
+
+#### Retorna staus 200 e um objeto no oseguinte formato:
+
+```JSON
+{
+    "id": "3dc81c46-a7bf-450b-9f90-4ae34739d00a",
+    "city": "cidade",
+    "userId": "7d15a6fb-69df-4af8-ac29-5b75ab634d88",
+    "street": "nome da rua",
+    "district": "nome do bairro",
+    "zipCode": "cep",
+    "number": numero,
+    "block": quadra,
+    "state": "estado",
+    "uf": "uf",
+    "reference": "uma referencia qualquer aqui",
+    "createdAt": "2022-08-10T18:40:24.786Z",
+    "updatedAt": "2022-08-10T18:40:24.786Z"
+}
+```
